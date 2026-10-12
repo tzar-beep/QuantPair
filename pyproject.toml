@@ -1,0 +1,23 @@
+[project]
+name = "quantpair"
+version = "0.1.0"
+description = "Cointegration-based statistical arbitrage research platform"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+filterwarnings = ["ignore::FutureWarning"]
+
+[tool.ruff]
+line-length = 120
+src = ["src", "."]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B905", "E731"]
+
+[tool.ruff.lint.per-file-ignores]
+"views/*" = ["E501"]
+"ui/*" = ["E501"]
+"api/*" = ["E501"]
